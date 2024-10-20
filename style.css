@@ -1,0 +1,604 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    position: sticky;  /* Membuat navbar sticky saat di-scroll */
+    top: 0;  /* Navbar akan tetap berada di posisi paling atas */
+    z-index: 1000;  /* Agar navbar tetap di atas elemen lainnya saat di-scroll */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Memberikan efek bayangan agar terlihat lebih jelas */
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    margin-left: 55px;
+}
+
+/* Navbar Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1E1E2C;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #6C63FF;
+}
+
+.nav-links a.active {
+    color: #6C63FF; /* Warna untuk item yang aktif */
+}
+
+/* Contact Button */
+.contact-button .btn {
+    padding: 10px 20px;
+    border: 2px solid #6C63FF;
+    color: #6C63FF;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: all 0.3s;
+    margin-right: 18px;
+}
+
+.contact-button .btn:hover {
+    background-color: #6C63FF;
+    color: white;
+}
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: #f0f0f5;
+    height: 75vh; /* Full height */
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    margin-left:25px;
+    color: #000;
+}
+
+.hero-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    margin-left:25px;
+    color: #000;
+}
+
+.hero-content .highlight {
+    color: #6C63FF;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    margin-left:25px;
+    color: #555;
+}
+
+.hero-content .btn {
+    padding: 12px 25px;
+    background-color: #6C63FF;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left:25px;
+    transition: background-color 0.3s;
+}
+
+.hero-content .btn:hover {
+    background-color: #4c48cc;
+}
+
+/* Hero Image */
+.hero-image img {
+    max-width: 300px;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-right: 60px;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: fadeInUp 1s ease-out forwards;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* My Expertise Section */
+.my-expertise {
+    text-align: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+}
+
+.my-expertise h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Expertise Container */
+/* Animasi fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Muncul dari bawah */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0; /* Default state saat belum terlihat */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    animation: fadeIn 1s forwards; /* Mulai animasi fade-in */
+}
+
+/* Style untuk section My Expertise */
+.expertise-container {
+    display: flex;
+    justify-content: center;  /* Centers the flex items horizontally */
+    gap: 20px;  /* Adds space between each card */
+    flex-wrap: wrap;  /* Allows the cards to wrap to the next line if the screen is too small */
+    padding-bottom: 20px;
+}
+
+.card {
+    flex: 0 0 250px; /* Each card takes up a fixed width */
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card img {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card p {
+    font-size: 16px;
+    color: #555;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarges the card on hover */
+}
+
+
+
+/* About Me Section */
+/* Tambahan CSS untuk efek fade-in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* Mulai dari sedikit di bawah */
+    transition: opacity 1 ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0); /* Kembali ke posisi semula */
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    background-color: #f5f9ff;
+}
+
+.about-image {
+    flex: 1;
+    margin-right: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 200%; /* Membuat gambar menjadi lingkaran */
+    border: 3px solid #7a5cf0; /* Border dengan warna yang lebih cerah */
+    box-shadow: 0 10px 25px rgba(122, 92, 240, 0.5); /* Efek shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.1); /* Perbesar sedikit gambar saat hover */
+    box-shadow: 0 15px 30px rgba(122, 92, 240, 0.7); /* Shadow lebih kuat saat hover */
+}
+
+.about-text {
+    flex: 2;
+    padding: 20px;
+}
+
+.about-text h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #6C63FF; /* Warna ungu seperti pada gambar */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px; /* Membuat sudut tombol membulat */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #554DDE; /* Warna lebih gelap saat tombol di-hover */
+}
+    
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .about-text {
+        padding: 0;
+    }
+}
+
+
+/* Basic styles for the portfolio section */
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px); /* Efek mulai dari bawah */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0); /* Kembali ke posisi semula */
+}
+
+.portfolio-section {
+    padding: 40px;
+    text-align: center;
+}
+
+.portfolio-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Grid layout for portfolio items */
+.portfolio-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.portfolio-item {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    flex-basis: 30%;
+}
+
+.portfolio-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.portfolio-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.portfolio-item p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Link style */
+.view-link {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.view-link:hover {
+    text-decoration: underline;
+}
+
+/* Styles for Achievements Section */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px); /* Efek mulai dari bawah */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0); /* Kembali ke posisi semula */
+}
+
+.achievements-section {
+    padding: 40px;
+    background-color: #f5f9ff;
+    text-align: center;
+}
+
+.achievements-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Grid layout for achievement items */
+.achievements-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.achievement-item {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    flex-basis: 45%;
+    max-width: 45%;
+}
+
+.achievement-item img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.achievement-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .achievement-item {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Contact Section */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px); /* Efek mulai dari bawah */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0); /* Kembali ke posisi semula */
+}
+
+.contact-section {
+    text-align: center;
+    padding: 40px;
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+    width: 100%;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+    border-color: #7a5cf0;
+}
+
+.form-row textarea {
+    width: 100%;
+    resize: none;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+}
+
+.terms input {
+    margin-right: 10px;
+}
+
+.send-message-btn {
+    padding: 10px 25px;
+    background-color: #6C63FF; /* Warna ungu */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.send-message-btn:hover {
+    background-color: #554DDE; /* Warna lebih gelap saat di-hover */
+}
+
+/* Footer Section */
+.footer {
+    background-color: #f5f9ff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #7a5cf0;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    color: #666;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    color: #7a5cf0;
+}
+
+.footer-social .fa {
+    transition: color 0.3s;
+}
+
+.footer-social a:hover .fa {
+    color: #7a5cf0;
+}
+
+.footer-social i {
+    margin: 0 10px;
+}
+
+.footer p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+        margin-right: 0;
+    }
+}
